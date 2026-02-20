@@ -1,0 +1,102 @@
+.titan-one-primary {
+  font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-secondary {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+.whiteDiv{
+  background-color: white;
+  width: 100%;
+  margin: 2vw 0 0 0;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.colorDiv {
+  background-color: #5C877F;
+  width: 100%;
+  margin: 2vw 0 0 0;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.colorDiv h1,
+.colorDiv p{
+    color: white;
+}
+
+.eyecatch{
+    color: #FFE99E;
+}
+
+.header{
+    background-color: #5C877F;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    gap: 2rem;
+    right: 2rem;
+    font-size: 1.25rem;
+
+}
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-page {
+  font-size: 2rem;
+  color: white;
+  margin-top: -0.5rem;
+}
+.portfolio{
+    font-size: 5rem;
+    margin: 0;
+}
+
+.footer{
+    color: white;
+    background-color: #5C877F;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

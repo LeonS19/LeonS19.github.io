@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style/stylesheet.css">
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+
+        <div class="colorDiv">
+            <h1 class="titan-one-primary eyecatch">Hello World</h1>
+            <p class="roboto-secondary">Lorem Ipsum</p>
+        </div>
+
+        <div id="footer-placeholder"></div>
+        
+
+        <script>
+            fetch('components/header.html')
+                .then(res => res.text())
+                .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            
+                const pageName = "Kontakt";
+                const element = document.getElementById("current-page");
+                if(element) element.textContent = pageName;
+            });
+            fetch('components/footer.html')
+                .then(res => res.text())
+                .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data});
+        </script>
+    </body>
+</html>
