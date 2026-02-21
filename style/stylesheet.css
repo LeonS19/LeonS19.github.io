@@ -29,20 +29,73 @@ a{
     
 }
 
+.circle-left-top,
+.circle-left-bottom,
+.circle-right-top,
+.circle-right-bottom {
+  width: 75px;
+  height: 75px;
+  background: #5C877F;
+  border-radius: 50%;
+  position: absolute;
+  border: 6px solid white;
+  z-index: 1;
+}
+
+/* Links */
+.circle-left-top {
+  left: 4rem;
+  top: -37.5px;
+}
+
+.circle-left-bottom {
+  left: 4rem;
+  bottom: -37.5px;
+}
+
+.header .circle-left{
+  top: 50%;
+  transform: translateY(40%);
+  left: 4rem;
+  position: absolute;
+}
+
+/* Rechts */
+.circle-right-top {
+  right: 4rem;
+  top: -37.5px;
+}
+
+.circle-right-bottom {
+  right: 4rem;
+  bottom: -37.5px;
+}
+
 .whiteDiv{
-  background-color: white;
   width: 100%;
   margin: 2vw 0 0 0;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 1rem;
+  position: relative;
+  overflow: visible;
+}
+
+.connector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 5;
 }
 
 .colorDiv {
   background-color: #5C877F;
   width: 100%;
   margin: 2vw 0 0 0;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   border-radius: 1rem;
+  position: relative;
 }
 .colorDiv h1,
 .colorDiv p{
@@ -86,7 +139,7 @@ a{
   margin-top: -0.5rem;
 }
 .portfolio{
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 0;
 }
 
@@ -99,4 +152,6 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: visible;
 }

@@ -9,19 +9,36 @@
     <body>
         <div id="header-placeholder"></div>
 
-        <div class="whiteDiv">
-            <h1 class="titan-one-primary ">Lorem Ipsum</h1>
-            <p class="roboto-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <div class="whiteDiv" id="connector-1">
+            <svg class="connector" id="svg-1" xmlns="http://www.w3.org/2000/svg">
+                <path id="path-1" stroke="#5C877F" stroke-width="4" fill="none"/>
+            </svg>
         </div>
 
         <div class="colorDiv">
-            <h1 class="titan-one-primary">Lorem Ipsum</h1>
-            <p class="roboto-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </div>
-
-        <div class="whiteDiv">
+            <div class="circle-right-top"></div>
             <h1 class="titan-one-primary ">Lorem Ipsum</h1>
             <p class="roboto-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <div class="circle-right-bottom"></div>
+        </div>
+
+        <div class="whiteDiv" id="connector-2">
+            <svg class="connector" id="svg-2" xmlns="http://www.w3.org/2000/svg">
+                <path id="path-2" stroke="#5C877F" stroke-width="4" fill="none"/>
+            </svg>
+        </div>
+
+        <div class="colorDiv">
+            <div class="circle-left-top"></div>
+            <h1 class="titan-one-primary ">Lorem Ipsum</h1>
+            <p class="roboto-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <div class="circle-left-bottom"></div>
+        </div>
+
+        <div class="whiteDiv" id="connector-3">
+            <svg class="connector" id="svg-3" xmlns="http://www.w3.org/2000/svg">
+                <path id="path-3" stroke="#5C877F" stroke-width="4" fill="none"/>
+            </svg>
         </div>
         
 
@@ -31,7 +48,7 @@
         
 
         <script>
-            fetch('components/header.html')
+            const headerPromise = fetch('components/header.html')
                 .then(res => res.text())
                 .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -40,10 +57,56 @@
                 const element = document.getElementById("current-page");
                 if(element) element.textContent = pageName;
             });
-            fetch('components/footer.html')
+            const footerPromise = fetch('components/footer.html')
                 .then(res => res.text())
                 .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data});
+
+            Promise.all([headerPromise, footerPromise]).then(() => {
+                updateConnectors();
+            });
+            
+                function updateConnectors() {
+                document.querySelectorAll('.whiteDiv').forEach((whiteDiv) => {
+                    const svg = whiteDiv.querySelector('svg');
+                    if (!svg) return;
+
+                    const path = svg.querySelector('path');
+                    const prevColorDiv = whiteDiv.previousElementSibling;
+                    let nextColorDiv = whiteDiv.nextElementSibling;
+
+                    if (!prevColorDiv || !nextColorDiv) return;
+
+                    // Unterer Circle des vorherigen Divs
+                    const circleTop = prevColorDiv.querySelector('.circle-left-bottom, .circle-right-bottom');
+                    // Oberer Circle des nächsten Divs
+                    const circleBottom = nextColorDiv.querySelector('.circle-left-top, .circle-right-top');
+
+                    if (!circleTop || !circleBottom) return;
+
+                    const whiteDivRect = whiteDiv.getBoundingClientRect();
+                    const topRect = circleTop.getBoundingClientRect();
+                    const bottomRect = circleBottom.getBoundingClientRect();
+
+                    const x1 = topRect.left + topRect.width / 2 - whiteDivRect.left;
+                    const y1 = topRect.top + topRect.height / 2 - whiteDivRect.top;
+                    const x2 = bottomRect.left + bottomRect.width / 2 - whiteDivRect.left;
+                    const y2 = bottomRect.top + bottomRect.height / 2 - whiteDivRect.top;
+
+                    svg.setAttribute('width', whiteDivRect.width);
+                    svg.setAttribute('height', whiteDivRect.height);
+                    svg.style.position = 'absolute';
+                    svg.style.top = '0';
+                    svg.style.left = '0';
+                    svg.style.overflow = 'visible';
+
+                    path.setAttribute('d', `M ${x1} ${y1} C ${x1} ${(y1 + y2) / 2}, ${x2} ${(y1 + y2) / 2}, ${x2} ${y2}`);
+                });
+            }
+
+            window.addEventListener('resize', updateConnectors);
+            window.addEventListener('load', updateConnectors);
+            window.addEventListener('scroll', updateConnectors);
         </script>
     </body>
 </html>
