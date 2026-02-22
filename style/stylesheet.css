@@ -71,6 +71,28 @@ a{
   bottom: -37.5px;
 }
 
+.project-number-right,
+.project-number-left{
+  position: absolute;
+  top: -37.5px;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.project-number-right{
+  right: 4rem;
+}
+
+.project-number-left{
+  left: 4rem;
+}
+
 .whiteDiv{
   width: 100%;
   margin: 2vw 0 0 0;
@@ -86,7 +108,7 @@ a{
   left: 0;
   overflow: visible;
   pointer-events: none;
-  z-index: 5;
+  z-index: 2;
 }
 
 .colorDiv {
@@ -103,7 +125,7 @@ a{
 }
 
 .eyecatch{
-    color: #FFE99E;
+    color: #FFE99E !important;
 }
 
 .header{
@@ -126,6 +148,11 @@ a{
     right: 2rem;
     font-size: 1.25rem;
 
+}
+
+.navbar a.active{
+  font-weight: bold;
+  color:#FFE99E;
 }
 
 .portfolio-container {
