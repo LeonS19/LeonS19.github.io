@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style/stylesheet.css">
         <script src="script/main.js" defer></script>
+        <script src="script/i18n/translation.js"></script>
     </head>
     <body>
         <div id="header-placeholder"></div>
@@ -20,8 +21,24 @@
         <div class="colorDiv">
             <div class="circle-right-top"></div>
             <h1 class="project-number-right titan-one-primary eyecatch">i</h1>
-            <h1 class="titan-one-primary ">Projektübersicht</h1>
-            <p class="roboto-secondary">*Liste von Projekten*</p>
+            <h1 class="titan-one-primary" data-i18n="projectOverview">Projektübersicht</h1>
+            <table class="roboto-secondary overview-table">
+                <tr class="overview-row">
+                    <td><a href="#projekt-1">MI'lefiz Meeplemainia</a></td>
+                    <td><a href="#projekt-4">Lernwolke</a></td>
+                    <td><a href="#projekt-7">MP3 Player</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#projekt-2">Dönerverleih</a></td>
+                    <td><a href="#projekt-5">Hollow Knight Animation</a></td>
+                    <td><a href="#projekt-8">Booklet</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#projekt-3">MelodyEscape</a></td>
+                    <td><a href="#projekt-6">Basicall</a></td>
+                    <td><a href="#projekt-9">Aeki-Raumplaner</a></td>
+                </tr>
+            </table>
             <div class="circle-right-bottom"></div>
         </div>
 
@@ -33,9 +50,9 @@
 
         <!-- Projekt 1 -->
         <div class="colorDiv">
-            <div class="circle-left-top"></div>
+            <div class="circle-left-top" id="projekt-1"></div>
             <h1 class="project-number-left titan-one-primary eyecatch">01</h1>
-            <h1 class="titan-one-primary ">Projekt 1</h1>
+            <h1 class="titan-one-primary ">MI'lefiz Meeplemainia</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-left-bottom"></div>
         </div>
@@ -48,9 +65,9 @@
 
         <!-- Projekt 2 -->
         <div class="colorDiv">
-            <div class="circle-right-top"></div>
+            <div class="circle-right-top" id="projekt-2"></div>
             <h1 class="project-number-right titan-one-primary eyecatch">02</h1>
-            <h1 class="titan-one-primary ">Projekt 2</h1>
+            <h1 class="titan-one-primary ">Dönerverleih</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-right-bottom"></div>
         </div>
@@ -63,9 +80,9 @@
 
         <!-- Projekt 3 -->
         <div class="colorDiv">
-            <div class="circle-left-top"></div>
+            <div class="circle-left-top" id="projekt-3"></div>
             <h1 class="project-number-left titan-one-primary eyecatch">03</h1>
-            <h1 class="titan-one-primary ">Projekt 3</h1>
+            <h1 class="titan-one-primary ">MelodyEscape</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-left-bottom"></div>
         </div>
@@ -78,9 +95,9 @@
 
         <!-- Projekt 4 -->
         <div class="colorDiv">
-            <div class="circle-right-top"></div>
+            <div class="circle-right-top" id="projekt-4"></div>
             <h1 class="project-number-right titan-one-primary eyecatch">04</h1>
-            <h1 class="titan-one-primary ">Projekt 4</h1>
+            <h1 class="titan-one-primary ">Lernwolke</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-right-bottom"></div>
         </div>
@@ -93,9 +110,9 @@
 
         <!-- Projekt 5 -->
         <div class="colorDiv">
-            <div class="circle-left-top"></div>
+            <div class="circle-left-top" id="projekt-5"></div>
             <h1 class="project-number-left titan-one-primary eyecatch">05</h1>
-            <h1 class="titan-one-primary ">Projekt 5</h1>
+            <h1 class="titan-one-primary ">Hollow Knight Animation</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-left-bottom"></div>
         </div>
@@ -108,9 +125,9 @@
 
         <!-- Projekt 6 -->
         <div class="colorDiv">
-            <div class="circle-right-top"></div>
+            <div class="circle-right-top" id="projekt-6"></div>
             <h1 class="project-number-right titan-one-primary eyecatch">06</h1>
-            <h1 class="titan-one-primary ">Projekt 6</h1>
+            <h1 class="titan-one-primary ">Basicall</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-right-bottom"></div>
         </div>
@@ -123,9 +140,9 @@
 
         <!-- Projekt 7 -->
         <div class="colorDiv">
-            <div class="circle-left-top"></div>
+            <div class="circle-left-top" id="projekt-7"></div>
             <h1 class="project-number-left titan-one-primary eyecatch">07</h1>
-            <h1 class="titan-one-primary ">Projekt 7</h1>
+            <h1 class="titan-one-primary ">MP3 Player</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-left-bottom"></div>
         </div>
@@ -138,9 +155,9 @@
 
         <!-- Projekt 8 -->
         <div class="colorDiv">
-            <div class="circle-right-top"></div>
+            <div class="circle-right-top" id="projekt-8"></div>
             <h1 class="project-number-right titan-one-primary eyecatch">08</h1>
-            <h1 class="titan-one-primary ">Projekt 8</h1>
+            <h1 class="titan-one-primary ">Booklet</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-right-bottom"></div>
         </div>
@@ -153,9 +170,9 @@
 
         <!-- Projekt 9 -->
         <div class="colorDiv">
-            <div class="circle-left-top"></div>
+            <div class="circle-left-top" id="projekt-9"></div>
             <h1 class="project-number-left titan-one-primary eyecatch">09</h1>
-            <h1 class="titan-one-primary ">Projekt 9</h1>
+            <h1 class="titan-one-primary ">Aeki-Raumplaner</h1>
             <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
             <div class="circle-left-bottom"></div>
         </div>
@@ -166,7 +183,8 @@
             </svg>
         </div>
 
+
         <div id="footer-placeholder"></div>
-        
+        <div id="back-to-top-placeholder"></div> 
     </body>
 </html>
