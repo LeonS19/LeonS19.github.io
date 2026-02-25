@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style/stylesheet.css">
         <script src="script/main.js" defer></script>
         <script src="script/i18n/translation.js"></script>
+        <script src="script/slider.js"></script>
     </head>
     <body>
         <div id="header-placeholder"></div>
@@ -24,19 +25,19 @@
             <h1 class="titan-one-primary" data-i18n="projectOverview">Projektübersicht</h1>
             <table class="roboto-secondary overview-table">
                 <tr class="overview-row">
-                    <td><a href="#projekt-1">MI'lefiz Meeplemainia</a></td>
-                    <td><a href="#projekt-4">Lernwolke</a></td>
-                    <td><a href="#projekt-7">MP3 Player</a></td>
+                    <td class="projekt-1"><a href="#projekt-1">MI'lefiz Meeplemainia</a></td>
+                    <td class="projekt-4"><a href="#projekt-4">Lernwolke</a></td>
+                    <td class="projekt-7"><a href="#projekt-7">MP3 Player</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#projekt-2">Dönerverleih</a></td>
-                    <td><a href="#projekt-5">Hollow Knight Animation</a></td>
-                    <td><a href="#projekt-8">Booklet</a></td>
+                    <td class="projekt-2"><a href="#projekt-2">Dönerverleih</a></td>
+                    <td class="projekt-5"><a href="#projekt-5">Hollow Knight Animation</a></td>
+                    <td class="projekt-8"><a href="#projekt-8">Booklet</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#projekt-3">MelodyEscape</a></td>
-                    <td><a href="#projekt-6">Basicall</a></td>
-                    <td><a href="#projekt-9">Aeki-Raumplaner</a></td>
+                    <td class="projekt-3"><a href="#projekt-3">MelodyEscape</a></td>
+                    <td class="projekt-6"><a href="#projekt-6">Basicall</a></td>
+                    <td class="projekt-9"><a href="#projekt-9">Aeki-Raumplaner</a></td>
                 </tr>
             </table>
             <div class="circle-right-bottom"></div>
@@ -50,10 +51,17 @@
 
         <!-- Projekt 1 -->
         <div class="colorDiv">
-            <div class="circle-left-top" id="projekt-1"></div>
-            <h1 class="project-number-left titan-one-primary eyecatch">01</h1>
-            <h1 class="titan-one-primary ">MI'lefiz Meeplemainia</h1>
-            <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
+            <div class="circle-left-top"></div>
+            <span class="project-number-left titan-one-primary eyecatch">01</span>
+            <h1 class="titan-one-primary sub-header">MI'lefiz</h1>
+            <div class="project-container">
+                <div class="project-text">
+                    <p class="roboto-secondary" data-i18n="milefizInfo"></p>
+                </div>
+                <div class="project-slider">
+                    <div id="slider-1"></div>
+                </div>
+            </div>
             <div class="circle-left-bottom"></div>
         </div>
 
@@ -67,8 +75,8 @@
         <div class="colorDiv">
             <div class="circle-right-top" id="projekt-2"></div>
             <h1 class="project-number-right titan-one-primary eyecatch">02</h1>
-            <h1 class="titan-one-primary ">Dönerverleih</h1>
-            <p class="roboto-secondary">*Projektbeschreibung / Vid oder Bilder*</p>
+            <h1 class="titan-one-primary" data-i18n="doenerHeader"></h1>
+            <p class="roboto-secondary" data-i18n="doenerInfo"></p>
             <div class="circle-right-bottom"></div>
         </div>
 
@@ -186,5 +194,17 @@
 
         <div id="footer-placeholder"></div>
         <div id="back-to-top-placeholder"></div> 
+
+        <script>
+            createSlider('slider-1', [
+                'assets/images/milefiz/milefiz_screen_1.png',
+                'assets/images/milefiz/milefiz_screen_2.png',
+                'assets/images/milefiz/milefiz_screen_3.png',
+                'assets/images/milefiz/milefiz_screen_4.png',
+                'assets/images/milefiz/milefiz_screen_5.png',
+                'assets/images/milefiz/milefiz_screen_6.png',
+                'assets/images/milefiz/milefiz_screen_7.png',
+            ]);
+        </script>
     </body>
 </html>

@@ -220,19 +220,52 @@ a{
 }
 
 .overview-table td {
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay zum Ausgrauen */
+.overview-table td::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  transition: background-color 0.3s ease;
+}
+
+.overview-table td:hover::after {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .overview-table td:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Text über dem Overlay */
+.overview-table td a {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Individuelle Bilder */
+.overview-table .projekt-1 { background-image: url('../assets/images/milefiz/milefiz_screen_2.png'); }
+.overview-table .projekt-2 { background-image: url('../assets/images/projekt2.png'); }
+.overview-table .projekt-3 { background-image: url('../assets/images/projekt3.png'); }
+.overview-table .projekt-4 { background-image: url('../assets/images/projekt4.png'); }
+.overview-table .projekt-5 { background-image: url('../assets/images/projekt5.png'); }
+.overview-table .projekt-6 { background-image: url('../assets/images/projekt6.png'); }
+
 
 .footer{
     color: white;
@@ -273,31 +306,25 @@ a{
     opacity: 1;
     visibility: visible;
     transform: translateY(0px) scale(1);
-    animation: bounceAndFlash 0.6s ease;
     border: 4px #FFE99E solid;
+    animation: bounceAndFlash 0.6s ease 0.4s;
 }
 
 @keyframes bounceAndFlash {
-    0% { 
-        transform: translateY(0) scale(1); 
+    0% {  
         background-color: #5C877F;
     }
     25% { 
-        transform: translateY(-10px) scale(1.1); 
         background-color: #FFE99E;
     }
     50% { 
-        transform: translateY(0) scale(1); 
         background-color: #FFE99E;
 
     }
     75% {
         background-color: #FFE99E;
-                stroke: #5C877F;
-
     }
     100% { 
-        transform: translateY(0) scale(1); 
         background-color: #5C877F;
     }
 }
@@ -319,4 +346,118 @@ a{
 .back-to-top-btn svg {
     stroke: white;
     transition: stroke 0.3s ease;
+}
+
+.project-container {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.project-text {
+    flex: 1;
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.131);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.sub-header{
+  font-size: 2.5rem;
+}
+
+.project-text p{
+  color: #342F1F;
+  font-size: 1rem;
+}
+
+.project-slider {
+  flex: 1;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-track-wrapper {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.slider-img {
+  min-width: 100%;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.slider-btn {
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-dot.active {
+  background: #FFE99E;
 }
