@@ -209,7 +209,7 @@ a{
     margin: 0;
 }
 
-/* Projekt-Übersichtstabelle */
+/* project-Übersichtstabelle */
 .overview-table {
     width: 100%;
     max-width: 800px;
@@ -220,7 +220,7 @@ a{
 }
 
 .overview-table td {
-  padding: 1.5rem;
+  padding: 0;
   border-radius: 10px;
   text-align: center;
   transition: all 0.3s ease;
@@ -253,18 +253,28 @@ a{
 
 /* Text über dem Overlay */
 .overview-table td a {
-  position: relative;
-  z-index: 1;
+    display: block;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
 }
 
 
 /* Individuelle Bilder */
-.overview-table .projekt-1 { background-image: url('../assets/images/milefiz/milefiz_screen_2.png'); }
-.overview-table .projekt-2 { background-image: url('../assets/images/projekt2.png'); }
-.overview-table .projekt-3 { background-image: url('../assets/images/projekt3.png'); }
-.overview-table .projekt-4 { background-image: url('../assets/images/projekt4.png'); }
-.overview-table .projekt-5 { background-image: url('../assets/images/projekt5.png'); }
-.overview-table .projekt-6 { background-image: url('../assets/images/projekt6.png'); }
+.overview-table .project-1 { background-image: url('../assets/images/milefiz/milefiz_screen_2.png'); }
+.overview-table .project-2 { background-image: url('../assets/images/previews/doener_prv.png'); }
+.overview-table .project-3 { background-image: url('../assets/images/previews/melody_prv.png'); }
+.overview-table .project-4 { background-image: url('../assets/images/previews/lernwolke_prv.png'); }
+.overview-table .project-5 { background-image: url('../assets/images/previews/hollowKnight_prv.png'); }
+.overview-table .project-6 { background-image: url('../assets/images/previews/bc_prv.png'); }
+.overview-table .project-7 { background-image: url('../assets/images/previews/mp3_prv.png'); }
+.overview-table .project-8 { background-image: url('../assets/images/previews/bkl_prv.png'); }
+.overview-table .project-9 { background-image: url('../assets/images/previews/'); }
+.overview-table .project-10 { background-image: url('../assets/images/previews/'); }
 
 
 .footer{
