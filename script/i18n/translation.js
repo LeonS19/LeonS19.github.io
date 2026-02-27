@@ -4,8 +4,18 @@ const translations = {
         footertext: "Für Kontaktanfragen nutzen Sie bitte die im Lebenslauf angegebenen Kontaktdaten.",
         pageHome: "Home",
         pageProjects: "Projekte",
-        pageAbout: "Über Mich",
-        pageContact: "Kontakt",
+        pageSkills: "Skills",
+        pageResume: "Lebenslauf",
+
+        heroTitle: "Hi, ich bin Leon",
+        heroSubtitle: "Medieninformatik Student im 5. Semester",
+        heroDescription: "Auf dieser Seite möchte ich Projekte aus meinem Studium vorstellen. Von Webentwicklung über UI/UX Design bis hin zu Motion Design.",
+        featuredProjects: "Ausgewählte Projekte",
+        learnMore: "Mehr erfahren →",
+        viewAllProjects: "Alle Projekte ansehen",
+        milefizShortDesc: "Ein interaktives Multiplayer Spiel in Anlehnung an das Brettspiel Malefiz.",
+        lernwolkeShortDesc: "Das interaktive Lern- und Pausensystem.",
+        HKShortDesc: "Atmosphärische Animation im Stil des Indie-Spiels Hollow Knight",
         
         milefizHeader: "MI'lefiz Meeplemania",
         milefizSemesterInfo: "5. Semester – Softwaretechnik-Projekt",
@@ -46,14 +56,26 @@ const translations = {
         calumetHeader: "Calumet Shop Seite",
         calumetSemesterInfo: "2. Semester – Interaction Design",
         calumetInfo: "1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view",
+        
+    
     },
     en: {
         projectOverview: "Project Overview",
         footertext: "For contact inquiries, please use the contact details provided in the resume.",
         pageHome: "Home",
         pageProjects: "Projects",
-        pageAbout: "About",
-        pageContact: "Contact",
+        pageSkills: "Skills",
+        pageResume: "Resume",
+
+        heroTitle: "Hi, I'm Leon",
+        heroSubtitle: "Media Informatics Student in 5th Semester",
+        heroDescription: "On this page, I would like to present projects from my studies. From web development to UI/UX design to motion design.",
+        featuredProjects: "Featured Projects",
+        learnMore: "Learn More →",
+        viewAllProjects: "View All Projects",
+        milefizShortDesc: "An interactive multiplayer game inspired by the board game Malefiz.",
+        lernwolkeShortDesc: "The interactive learning and break system.",
+        HKShortDesc: "Atmospheric animation in the style of the indie game Hollow Knight",
         
         milefizHeader: "MI'lefiz Meeplemania",
         milefizSemesterInfo: "5th Semester – Software Engineering Project",
@@ -91,10 +113,9 @@ const translations = {
         aekiSemesterInfo: "4th Semester – Software Engineering",
         aekiInfo:"",
         
-        calumetHeader: "Calumet Shop Website",
+        calumetHeader: "Calumet Shop Site",
         calumetSemesterInfo: "2nd Semester – Interaction Design",
         calumetInfo: "1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view",
-
 
     }
 };
@@ -139,14 +160,14 @@ function updateNavbarTranslations(lang){
         if(href.includes('index')){
             link.textContent = getTranslation('pageHome', lang)
         }
-        else if(href.includes('projekte')){
+        else if(href.includes('projects')){
             link.textContent = getTranslation('pageProjects', lang)
         }
-        else if(href.includes('ueber-mich')){
-            link.textContent = getTranslation('pageAbout', lang)
+        else if(href.includes('skills')){
+            link.textContent = getTranslation('pageSkills', lang)
         }
-        else if(href.includes('kontakt')){
-            link.textContent = getTranslation('pageContact', lang)
+        else if(href.includes('resume')){
+            link.textContent = getTranslation('pageResume', lang)
         }
     })
 }

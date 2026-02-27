@@ -11,9 +11,9 @@ const headerPromise = fetch('components/header.html')
     const currentPage = window.location.pathname.split("/").pop();
 
     let pageKey = "pageHome";
-    if(currentPage.includes('projekte')) pageKey = 'pageProjects';
-    else if(currentPage.includes('ueber-mich')) pageKey = 'pageAbout';
-    else if(currentPage.includes('kontakt')) pageKey = 'pageContact';
+    if(currentPage.includes('projects')) pageKey = 'pageProjects';
+    else if(currentPage.includes('skills')) pageKey = 'pageSkills';
+    else if(currentPage.includes('resume')) pageKey = 'pageResume';
     
     const element = document.getElementById('current-page');
     if(element) {

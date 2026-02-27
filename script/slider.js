@@ -1,4 +1,4 @@
-function createSlider(containerId, images) {
+function createSlider(containerId, items) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -20,11 +20,30 @@ function createSlider(containerId, images) {
     const track = document.createElement('div');
     track.classList.add('slider-track');
 
-    images.forEach((src) => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.classList.add('slider-img');
-        track.appendChild(img);
+    items.forEach((item) => {
+        if (typeof item === 'string'){
+            const img = document.createElement('img');
+            img.src = item;
+            img.classList.add('slider-img');
+            track.appendChild(img);
+        }else if (item.type === 'video'){
+            const videoWrapper = document.createElement('div');
+            videoWrapper.classList.add('slider-img');
+            videoWrapper.style.minWidth = '100%';
+            videoWrapper.style.width = '100%';
+            videoWrapper.style.height = '50vh';
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = item.src;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.setAttribute('allowfullscreen', "");
+            iframe.setAttribute('allow', 'accelerometer; clipboard-write; clipboard-write; encrypted-media; encrypted-media; gyroscope')
+            
+            videoWrapper.appendChild(iframe);
+            track.appendChild(videoWrapper);
+        }
     });
 
     const nextBtn = document.createElement('button');
@@ -34,7 +53,7 @@ function createSlider(containerId, images) {
     const dots = document.createElement('div');
     dots.classList.add('slider-dots');
 
-    const dotElements = images.map((_, index) => {
+    const dotElements = items.map((_, index) => {
         const dot = document.createElement('span');
         dot.classList.add('slider-dot');
         if (index === 0) dot.classList.add('active');
@@ -68,12 +87,12 @@ function createSlider(containerId, images) {
     }
 
     prevBtn.addEventListener('click', () => {
-        current = current > 0 ? current - 1 : images.length - 1;
+        current = current > 0 ? current - 1 : items.length - 1;
         updateSlider();
     });
 
     nextBtn.addEventListener('click', () => {
-        current = current < images.length - 1 ? current + 1 : 0;
+        current = current < items.length - 1 ? current + 1 : 0;
         updateSlider();
     });
 }
