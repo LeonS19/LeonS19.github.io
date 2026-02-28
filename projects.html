@@ -4,8 +4,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon/Icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="style/stylesheet.css">
-        <script src="script/main.js" defer></script>
+        <script src="script/main.js"></script>
         <script src="script/i18n/translation.js"></script>
         <script src="script/slider.js"></script>
     </head>
@@ -21,7 +23,7 @@
         <!--Intro/Übersicht-->
         <div class="colorDiv">
             <div class="circle-right-top"></div>
-            <h1 class="project-number-right titan-one-primary eyecatch">i</h1>
+            <h1 class="circle-content-right titan-one-primary eyecatch">i</h1>
             <h1 class="titan-one-primary" data-i18n="projectOverview">Projekt übersicht</h1>
             <table class="roboto-secondary overview-table">
                 <tr class="overview-row">
@@ -59,14 +61,20 @@
         <!-- project 1 -->
         <div class="colorDiv">
             <div class="circle-left-top" id="milefiz"></div>
-            <span class="project-number-left titan-one-primary eyecatch">01</span>
+            <span class="circle-content-left titan-one-primary eyecatch">01</span>
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="milefizHeader">MI'lefiz</h1>
-                <p class="semester roboto-secondary" data-i18n="milefizSemesterInfo">5. Semester</p>
+                <h2 class="semester roboto-secondary" data-i18n="milefizSemesterInfo">5. Semester</h2>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">Spring Boot</span>
+                    <span class="tech-badge">Three.js</span>
+                    <span class="tech-badge">Vue.js</span>
+                </div>
             </div>
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="milefizInfo"></p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="milefiz-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-slider">
                     <div id="slider-1"></div>
@@ -74,6 +82,7 @@
             </div>
             <div class="circle-left-bottom"></div>
         </div>
+
 
         <div class="whiteDiv" id="connector-3">
             <svg class="connector" id="svg-3" xmlns="http://www.w3.org/2000/svg">
@@ -84,14 +93,20 @@
         <!-- project 2 -->
         <div class="colorDiv">
             <div class="circle-right-top" id="doener"></div>
-            <h1 class="project-number-right titan-one-primary eyecatch">02</h1>
+            <h1 class="circle-content-right titan-one-primary eyecatch">02</h1>
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="doenerHeader"></h1>
                 <p class="semester roboto-secondary" data-i18n="doenerSemesterInfo">4. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">Spring Boot</span>
+                    <span class="tech-badge">Thymeleaf</span>
+                    <span class="tech-badge">Vue.js</span>
+                </div>
             </div>
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="doenerInfo"></p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="doener-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-slider">
                     <div id="slider-2"></div>
@@ -110,10 +125,13 @@
         <!-- project 3 -->
         <div class="colorDiv">
             <div class="circle-left-top" id="melodyEscape"></div>
-            <h1 class="project-number-left titan-one-primary eyecatch">03</h1>
+            <h1 class="circle-content-left titan-one-primary eyecatch">03</h1>
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="melodyEscapeHeader">MelodyEscape</h1>
                 <p class="semester roboto-secondary" data-i18n="melodyEscapeSemesterInfo">3. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">JavaFX</span>
+                </div>
             </div>
 
             <div class="project-container">
@@ -121,14 +139,8 @@
                     <p class="roboto-secondary" data-i18n="melodyEscapeInfo">*projectbeschreibung / Vid oder Bilder*</p>
                 </div>
 
-                <div class="project-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/4SwvMUJdi4g"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                <div class="project-video" >
+                    <div id="melody-player"></div>
                 </div>
             </div>
             
@@ -144,10 +156,15 @@
         <!-- project 4 -->
         <div class="colorDiv">
             <div class="circle-right-top" id="lernwolke"></div>
-            <h1 class="project-number-right titan-one-primary eyecatch">04</h1>
+            <h1 class="circle-content-right titan-one-primary eyecatch">04</h1>
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="lernwolkeHeader">Lernwolke</h1>
                 <p class="semester roboto-secondary" data-i18n="lernwolkeSemesterInfo">3. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">Unity 6</span>
+                    <span class="tech-badge">PolySpacial</span>
+                    <span class="tech-badge">Premier Pro</span>
+                </div>
             </div>
 
             <div class="project-container">
@@ -155,13 +172,7 @@
                     <p class="roboto-secondary" data-i18n="lernwolkeInfo">*projectbeschreibung / Vid oder Bilder*</p>
                 </div>
                 <div class="project-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/PyrLu2bvX1I"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <div id="lernwolke-player"></div>
                 </div>
             </div>            
             
@@ -177,25 +188,23 @@
         <!-- project 5 -->
         <div class="colorDiv">
             <div class="circle-left-top" id="hollowknight"></div>
-            <h1 class="project-number-left titan-one-primary eyecatch">05</h1>
+            <h1 class="circle-content-left titan-one-primary eyecatch">05</h1>
 
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="HKHeader">Hollow Knight Animation</h1>
                 <p class="semester roboto-secondary " data-i18n="HKSemesterInfo">3. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">After Effects</span>
+                    <span class="tech-badge">Premiere Pro</span>
+                </div>
             </div>
 
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="HKInfo">*projectbeschreibung / Vid oder Bilder*</p>
                 </div>
-                <div class="project-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/x7nPo_s8MS4"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                <div class="project-video" >
+                    <div id="hollowknight-player"></div>
                 </div>
             </div>         
             
@@ -211,23 +220,37 @@
         <!-- project 6 -->
         <div class="colorDiv">
             <div class="circle-right-top" id="basicall"></div>
-            <h1 class="project-number-right titan-one-primary eyecatch">06</h1>
+            <h1 class="circle-content-right titan-one-primary eyecatch">06</h1>
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="basicallHeader">Basicall</h1>
                 <p class="semester roboto-secondary" data-i18n="basicallSemesterInfo">3. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">Figma</span>
+                </div>
             </div>
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="basicallInfo"></p>
                 </div>
                 <div class="basicall-figma">
-                <iframe 
-                    src="https://embed.figma.com/proto/pA1LFrQWA5dSE16nP8rSdM/Basicall?node-id=928201-336&p=f&scaling=min-zoom&content-scaling=fixed&page-id=928201%3A192&starting-point-node-id=928201%3A336&embed-host=share"
-                    width="100%" 
-                    allowfullscreen>
-                </iframe>
+                    <iframe 
+                        src="https://embed.figma.com/proto/pA1LFrQWA5dSE16nP8rSdM/Basicall?node-id=928201-336&p=f&scaling=min-zoom&content-scaling=fixed&page-id=928201%3A192&starting-point-node-id=928201%3A336&embed-host=share"
+                        width="100%" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
+            
+            <div class="figma-link-container">
+                <a href="https://www.figma.com/proto/pA1LFrQWA5dSE16nP8rSdM/Basicall?node-id=928375-3411&p=f&t=DgizyQ1ekuZU3JUD-1&scaling=scale-down&content-scaling=fixed&page-id=928375%3A3410&starting-point-node-id=928375%3A3411" 
+                class="figma-link roboto-secondary" 
+                target="_blank"
+                data-i18n="mobileVersionLink">
+                    <i class="fas fa-mobile-alt"></i>
+                    Zur mobilen Version →
+                </a>
+            </div>
+            
             <div class="circle-right-bottom"></div>
         </div>
 
@@ -240,11 +263,14 @@
         <!-- project 7 -->
         <div class="colorDiv">
             <div class="circle-left-top" id="mp3Player"></div>
-            <h1 class="project-number-left titan-one-primary eyecatch">07</h1>
+            <h1 class="circle-content-left titan-one-primary eyecatch">07</h1>
 
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="mp3PlayerHeader">MP3 Player</h1>
                 <p class="semester roboto-secondary" data-i18n="mp3PlayerSemesterInfo">3. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">JavaFX</span>
+                </div>
             </div>
 
             <div class="project-container">
@@ -252,13 +278,7 @@
                     <p class="roboto-secondary" data-i18n="mp3PlayerInfo">*projectbeschreibung / Vid oder Bilder*</p>
                 </div>
                 <div class="project-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/HJYH0AhHVS0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <div id="mp3Player-player"></div>
                 </div>
             </div>
             <div class="circle-left-bottom"></div>
@@ -273,11 +293,16 @@
         <!-- project 8 -->
         <div class="colorDiv">
             <div class="circle-right-top" id="booklet"></div>
-            <h1 class="project-number-right titan-one-primary eyecatch">08</h1>
+            <h1 class="circle-content-right titan-one-primary eyecatch">08</h1>
 
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="bookletHeader">Booklet</h1>
                 <p class="semester roboto-secondary" data-i18n="bookletSemesterInfo">3. Semester</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">InDesign</span>
+                    <span class="tech-badge">Photoshop</span>
+                    <span class="tech-badge">Illustrator</span>
+                </div>
             </div>
             <div class="project-container">
                 <div class="project-text">
@@ -308,11 +333,14 @@
         <!-- project 9 -->
         <div class="colorDiv">
             <div class="circle-left-top" id="aeki"></div>
-            <h1 class="project-number-left titan-one-primary eyecatch">09</h1>
+            <h1 class="circle-content-left titan-one-primary eyecatch">09</h1>
 
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="aekiHeader">Aeki-Raumplaner</h1>
                 <p class="semester roboto-secondary" data-i18n="aekiSemesterInfo">4. Semester – Softwaretechnik</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">JavaFX</span>
+                </div>
             </div>
 
             <p class="roboto-secondary" data-i18n="aekiInfo"></p>
@@ -329,10 +357,13 @@
         <div class="colorDiv">
             <div class="circle-right-top" id="calumet"></div>
 
-            <h1 class="project-number-right titan-one-primary eyecatch">10</h1>
+            <h1 class="circle-content-right titan-one-primary eyecatch">10</h1>
             <div class="project-header">
                 <h1 class="titan-one-primary sub-header" data-i18n="calumetHeader">Calumet</h1>
                 <p class="semester roboto-secondary" data-i18n="calumetSemesterInfo">2. Semester – Interaction Design</p>
+                <div class="project-technologies roboto-secondary">
+                    <span class="tech-badge">Figma</span>
+                </div>
             </div>
 
             <div class="project-container">
@@ -347,6 +378,15 @@
                         allowfullscreen>
                     </iframe>
                 </div>
+            </div>
+            <div class="figma-link-container">
+                <a href="https://www.figma.com/proto/P2CGyPrUUCZ3PLKVnNzMLZ/Gem-%C3%9Cbung2?node-id=369-128&p=f&t=TZ63TU0jQc53skT1-1&scaling=scale-down&content-scaling=fixed&page-id=369%3A126&starting-point-node-id=369%3A128" 
+                class="figma-link roboto-secondary" 
+                target="_blank"
+                data-i18n="mobileVersionLink">
+                    <i class="fas fa-mobile-alt"></i>
+                    Zur mobilen Version →
+                </a>
             </div>
             <div class="circle-right-bottom"></div>
         </div>

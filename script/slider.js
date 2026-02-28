@@ -20,31 +20,35 @@ function createSlider(containerId, items) {
     const track = document.createElement('div');
     track.classList.add('slider-track');
 
-    items.forEach((item) => {
-        if (typeof item === 'string'){
-            const img = document.createElement('img');
-            img.src = item;
-            img.classList.add('slider-img');
-            track.appendChild(img);
-        }else if (item.type === 'video'){
-            const videoWrapper = document.createElement('div');
-            videoWrapper.classList.add('slider-img');
-            videoWrapper.style.minWidth = '100%';
-            videoWrapper.style.width = '100%';
-            videoWrapper.style.height = '50vh';
-            
-            const iframe = document.createElement('iframe');
-            iframe.src = item.src;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = 'none';
-            iframe.setAttribute('allowfullscreen', "");
-            iframe.setAttribute('allow', 'accelerometer; clipboard-write; clipboard-write; encrypted-media; encrypted-media; gyroscope')
-            
-            videoWrapper.appendChild(iframe);
-            track.appendChild(videoWrapper);
+items.forEach((item, idx) => {
+    if (typeof item === 'string'){
+        const img = document.createElement('img');
+        img.src = item;
+        img.classList.add('slider-img');
+        track.appendChild(img);
+    }else if (item.type === 'video'){
+        const ytDiv = document.createElement('div');
+        ytDiv.classList.add('slider-img');
+        ytDiv.style.minWidth = '100%';
+        ytDiv.style.width = '100%';
+        ytDiv.style.height = '50vh';
+        // Eindeutige ID für den Player
+        const playerId = `${containerId}-youtube-${idx}`;
+        ytDiv.id = playerId;
+        track.appendChild(ytDiv);
+
+        // Player-Konfiguration merken
+        if (!window.pendingYouTubePlayers) window.pendingYouTubePlayers = [];
+        // Extrahiere Video-ID aus src
+        const match = item.src.match(/embed\/([a-zA-Z0-9_-]+)/);
+        if (match) {
+            window.pendingYouTubePlayers.push({
+                playerId,
+                videoId: match[1]
+            });
         }
-    });
+    }
+});
 
     const nextBtn = document.createElement('button');
     nextBtn.classList.add('slider-btn', 'slider-btn-next');
@@ -65,18 +69,12 @@ function createSlider(containerId, items) {
         return dot;
     });
 
-
     wrapper.appendChild(track);
+    wrapper.appendChild(dots); // Dots in den Wrapper!
+
     container.appendChild(prevBtn);
-    container.appendChild(wrapper);
+    container.appendChild(wrapper); // Wrapper enthält Track & Dots
     container.appendChild(nextBtn);
-
-    const sliderWrapper = document.createElement('div');
-    sliderWrapper.classList.add('slider-wrapper');
-    sliderWrapper.appendChild(container);
-    sliderWrapper.appendChild(dots);
-
-    parent.appendChild(sliderWrapper);
 
 
     function updateSlider() {

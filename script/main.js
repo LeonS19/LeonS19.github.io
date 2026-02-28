@@ -12,8 +12,6 @@ const headerPromise = fetch('components/header.html')
 
     let pageKey = "pageHome";
     if(currentPage.includes('projects')) pageKey = 'pageProjects';
-    else if(currentPage.includes('skills')) pageKey = 'pageSkills';
-    else if(currentPage.includes('resume')) pageKey = 'pageResume';
     
     const element = document.getElementById('current-page');
     if(element) {
@@ -144,4 +142,110 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         updateConnectors();
     }, 100);
+});
+
+const modals = [
+  'modal-milefiz.html',
+  'modal-doener.html',
+  
+];
+
+modals.forEach(filename => {
+  fetch(`components/modal/${filename}`)
+    .then(res => res.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+      setLanguage(getCurrentLanguage());
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.open-modal[data-modal]').forEach(openBtn => {
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const modalId = openBtn.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        // Schließen-Button im Modal
+        const closeBtn = modal.querySelector('.close-modal');
+        if (closeBtn) {
+          closeBtn.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+          };
+        }
+        // Klick auf Overlay schließt Modal
+        modal.onclick = function(event) {
+          if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        };
+      }
+    });
+  });
+});
+
+let ytApiReady = false;
+let domReady = false;
+
+function tryInitYouTubePlayers() {
+  if (ytApiReady && domReady) {
+    const videoConfigs = [
+      { id: 'lernwolke-player', videoId: 'PyrLu2bvX1I' },
+      { id: 'melody-player', videoId: '4SwvMUJdi4g' },
+      { id: 'hollowknight-player', videoId: 'x7nPo_s8MS4' },
+      { id: 'mp3Player-player', videoId: 'HJYH0AhHVS0' },
+    ];
+    videoConfigs.forEach(cfg => {
+      const el = document.getElementById(cfg.id);
+      if (el) {
+        new YT.Player(cfg.id, {
+            videoId: cfg.videoId,
+            playerVars: {
+                controls: 1,    // Standard-YouTube-Controls anzeigen
+                modestbranding: 1,
+                rel: 0,            // Keine verwandten Videos am Ende
+            },
+            events: {
+                'onReady': function(event) {
+                event.target.setVolume(10);
+                }
+            }
+        });
+      }
+    });
+  }
+}
+
+// YouTube API laden
+if (!window.YT) {
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+}
+
+window.onYouTubeIframeAPIReady = function() {
+  ytApiReady = true;
+  tryInitYouTubePlayers();
+
+  if (window.pendingYouTubePlayers && window.pendingYouTubePlayers.length > 0) {
+    window.pendingYouTubePlayers.forEach(cfg => {
+      window[cfg.playerId] = new YT.Player(cfg.playerId, {
+        videoId: cfg.videoId,
+        events: {
+          'onReady': function(event) {
+            event.target.setVolume(10);
+          }
+        }
+      });
+    });
+    window.pendingYouTubePlayers = [];
+  }
+};
+document.addEventListener('DOMContentLoaded', function() {
+  domReady = true;
+  tryInitYouTubePlayers();
 });

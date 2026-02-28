@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon/Icon.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="style/stylesheet.css">
         <script src="script/main.js" defer></script>
         <script src="script/i18n/translation.js"></script>
@@ -33,14 +35,37 @@
             <div class="circle-right-bottom"></div>
         </div>
 
+        <div class="whiteDiv" id="connector-2">
+            <svg class="connector" id="svg-2" xmlns="http://www.w3.org/2000/svg">
+                <path id="path-2" stroke="#5C877F" stroke-width="4" fill="none"/>
+            </svg>
+        </div>
 
-        <div class="whiteDiv" id="connector-1">
-            <svg class="connector" id="svg-1" xmlns="http://www.w3.org/2000/svg"></svg>
+        <!-- About Me Section -->
+        <div class="colorDiv about-section">
+            <div class="circle-left-top"></div>
+            <h1 class="circle-content-left titan-one-primary eyecatch"><i class="fas fa-pencil-ruler"></i></h1>
+            <div class="about-content">
+                <h1 class="titan-one-primary sub-header eyecatch" data-i18n="aboutMe">Über Mich</h1>
+                <p class="roboto-secondary" data-i18n="aboutText">
+                    Ich studiere Medieninformatik an der Hochschule der Medien Stuttgart 
+                    und interessiere mich besonders für Webentwicklung, UI/UX Design und Motion Design. 
+                    In meinen Projekten versuche ich immer, Funktionalität mit ansprechendem Design zu verbinden.
+                </p>
+            </div>
+            <div class="circle-left-bottom"></div>
+        </div>
+
+        <div class="whiteDiv" id="connector-3">
+            <svg class="connector" id="svg-3" xmlns="http://www.w3.org/2000/svg">
+                <path id="path-3" stroke="#5C877F" stroke-width="4" fill="none"/>
+            </svg>
         </div>
 
         <!-- Featured Projects -->
         <div class="colorDiv">
-            <div class="circle-left-top"></div>
+            <div class="circle-right-top"></div>
+            <h1 class="circle-content-right titan-one-primary eyecatch"><i class="fas fa-star"></i></h1>
             <h1 class="titan-one-primary" data-i18n="featuredProjects">Ausgewählte Projekte</h1>
             
             <div class="featured-projects-grid">
@@ -55,6 +80,11 @@
                         <h3 class="titan-one-primary" data-i18n="milefizHeader">MI'lefiz Meeplemania</h3>
                         <p class="roboto-secondary project-card-semester" data-i18n="milefizSemesterInfo">5. Semester – Softwaretechnik-Projekt</p>
                         <p class="roboto-secondary project-card-description" data-i18n="milefizShortDesc">Ein interaktives Brettspiel mit digitaler Unterstützung</p>
+                        <div class="project-technologies roboto-secondary">
+                            <span class="tech-badge-featured">Spring Boot</span>
+                            <span class="tech-badge-featured">Three.js</span>
+                            <span class="tech-badge-featured">Vue.js</span>
+                        </div>
                     </div>
                 </a>
 
@@ -69,6 +99,11 @@
                         <h3 class="titan-one-primary" data-i18n="lernwolkeHeader">Lernwolke</h3>
                         <p class="roboto-secondary project-card-semester" data-i18n="lernwolkeSemesterInfo">5. Semester – Mensch-Computer-Interaktion</p>
                         <p class="roboto-secondary project-card-description" data-i18n="lernwolkeShortDesc">Eine intuitive Lernplattform mit modernem Design</p>
+                        <div class="project-technologies roboto-secondary">
+                            <span class="tech-badge-featured">Unity 6</span>
+                            <span class="tech-badge-featured">PolySpacial</span>
+                            <span class="tech-badge-featured">Premier Pro</span>
+                        </div>
                     </div>
                 </a>
 
@@ -83,8 +118,13 @@
                         <h3 class="titan-one-primary" data-i18n="HKHeader">Hollow Knight Animation</h3>
                         <p class="roboto-secondary project-card-semester" data-i18n="HKSemesterInfo">4. Semester – Motion Design</p>
                         <p class="roboto-secondary project-card-description" data-i18n="HKShortDesc">Atmosphärische Animation im Stil von Hollow Knight</p>
+                        <div class="project-technologies roboto-secondary">
+                            <span class="tech-badge-featured">After Effects</span>
+                            <span class="tech-badge-featured">Premiere Pro</span>
+                        </div>
                     </div>
                 </a>
+                <div class="circle-right-bottom"></div>
             </div>
 
             <div class="view-all-projects">
@@ -92,14 +132,11 @@
             </div>
         </div>
 
-        <div class="whiteDiv" id="connector-2">
-            <svg class="connector" id="svg-2" xmlns="http://www.w3.org/2000/svg">
-                <path id="path-2" stroke="#5C877F" stroke-width="4" fill="none"/>
+        <div class="whiteDiv" id="connector-4">
+            <svg class="connector" id="svg-4" xmlns="http://www.w3.org/2000/svg">
+                <path id="path-4" stroke="#5C877F" stroke-width="4" fill="none"/>
             </svg>
-        </div>
-        
-
-
+        </div>    
 
         <div id="footer-placeholder"></div>
         <div id="back-to-top-placeholder"></div> 
