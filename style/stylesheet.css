@@ -381,9 +381,54 @@ a{
     margin-top: 15px;
 }
 
+
+.header-with-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .sub-header{
   font-size: 2.5rem;
   margin-bottom: -1rem;
+}
+
+.info-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFE99E;
+    margin-left: 8px;
+}
+.info-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #342F1F;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 100;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.95em;
+    white-space: pre-line;
+}
+.info-tooltip:hover .tooltip-text,
+.info-tooltip:focus .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+.info-tooltip i {
+    font-size: 1.3em;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .semester{

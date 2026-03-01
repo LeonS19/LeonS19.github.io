@@ -10,6 +10,7 @@
         <script src="script/main.js"></script>
         <script src="script/i18n/translation.js"></script>
         <script src="script/slider.js"></script>
+        <script src="script/tooltip.js"></script>
     </head>
     <body>
         <div id="header-placeholder"></div>
@@ -35,7 +36,7 @@
                 <tr>
                     <td class="lernwolke"><a href="#lernwolke">Lernwolke</a></td>
                     <td class="hollowknight"><a href="#hollowknight">Hollow Knight Animation</a></td>
-                    <td class="basicall"><a href="#basicall">Basicall</a></td>
+                    <td class="basicall"><a href="#basicall">basicall</a></td>
                 </tr>
                 <tr>
                     <td class="mp3Player"><a href="#mp3Player">MP3 Player</a></td>
@@ -137,6 +138,7 @@
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="melodyEscapeInfo">*projectbeschreibung / Vid oder Bilder*</p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="melodyEscape-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
 
                 <div class="project-video" >
@@ -170,6 +172,7 @@
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="lernwolkeInfo">*projectbeschreibung / Vid oder Bilder*</p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="lernwolke-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-video">
                     <div id="lernwolke-player"></div>
@@ -191,8 +194,8 @@
             <h1 class="circle-content-left titan-one-primary eyecatch">05</h1>
 
             <div class="project-header">
-                <h1 class="titan-one-primary sub-header" data-i18n="HKHeader">Hollow Knight Animation</h1>
-                <p class="semester roboto-secondary " data-i18n="HKSemesterInfo">3. Semester</p>
+                <h1 class="titan-one-primary sub-header" data-i18n="hkHeader">Hollow Knight Animation</h1>
+                <p class="semester roboto-secondary " data-i18n="hkSemesterInfo">3. Semester</p>
                 <div class="project-technologies roboto-secondary">
                     <span class="tech-badge">After Effects</span>
                     <span class="tech-badge">Premiere Pro</span>
@@ -201,7 +204,8 @@
 
             <div class="project-container">
                 <div class="project-text">
-                    <p class="roboto-secondary" data-i18n="HKInfo">*projectbeschreibung / Vid oder Bilder*</p>
+                    <p class="roboto-secondary" data-i18n="hkInfo">*projectbeschreibung / Vid oder Bilder*</p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="hk-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-video" >
                     <div id="hollowknight-player"></div>
@@ -222,7 +226,13 @@
             <div class="circle-right-top" id="basicall"></div>
             <h1 class="circle-content-right titan-one-primary eyecatch">06</h1>
             <div class="project-header">
-                <h1 class="titan-one-primary sub-header" data-i18n="basicallHeader">Basicall</h1>
+                <div class="header-with-info">
+                    <h1 class="titan-one-primary sub-header" data-i18n="basicallHeader">Basicall</h1>
+                    <span class="info-tooltip" tabindex="0">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text roboto-secondary" data-i18n="basicallTooltip">Infos zum Prototypen:<br>1. Am besten im Vollbild anschauen.<br>2. Interesse an einer mobile Variante? Unterhalb des Prototypens ist eine Verlinkung</span>
+                    </span>
+                </div>
                 <p class="semester roboto-secondary" data-i18n="basicallSemesterInfo">3. Semester</p>
                 <div class="project-technologies roboto-secondary">
                     <span class="tech-badge">Figma</span>
@@ -359,7 +369,13 @@
 
             <h1 class="circle-content-right titan-one-primary eyecatch">10</h1>
             <div class="project-header">
-                <h1 class="titan-one-primary sub-header" data-i18n="calumetHeader">Calumet</h1>
+                <div class="header-with-info">
+                    <h1 class="titan-one-primary sub-header" data-i18n="calumetHeader">Calumet</h1>
+                    <span class="info-tooltip" tabindex="0">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text roboto-secondary" data-i18n="calumetTooltip">Infos zum Prototypen:<br>1. Am besten im Vollbild anschauen.<br>2. Interesse an einer mobile Variante? Unterhalb des Prototypens ist eine Verlinkung</span>
+                    </span>
+                </div>
                 <p class="semester roboto-secondary" data-i18n="calumetSemesterInfo">2. Semester – Interaction Design</p>
                 <div class="project-technologies roboto-secondary">
                     <span class="tech-badge">Figma</span>

@@ -147,6 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const modals = [
   'modal-milefiz.html',
   'modal-doener.html',
+  'modal-melodyEscape.html',
+  'modal-lernwolke.html',
+  'modal-hk.html',
   
 ];
 

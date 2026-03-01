@@ -19,7 +19,7 @@ const translations = {
         viewAllProjects: `Alle Projekte ansehen`,
         milefizShortDesc: `Ein interaktives Multiplayer Spiel in Anlehnung an das Brettspiel Malefiz.`,
         lernwolkeShortDesc: `Das interaktive Lern- und Pausensystem.`,
-        HKShortDesc: `Atmosphärische Animation im Stil des Indie-Spiels Hollow Knight`,
+        hkShortDesc: `Atmosphärische Animation im Stil des Indie-Spiels Hollow Knight`,
 
         mobileVersionLink: `Zur mobilen Version →`,
 
@@ -47,17 +47,37 @@ const translations = {
 
         melodyEscapeHeader: `MelodyEscape`,
         melodyEscapeSemesterInfo: `3. Semester – Entwicklung Interaktiver Anwendungen`,
-        melodyEscapeInfo: ``,
+        melodyEscapeInfo: `Entwicklung Interaktiver Anwendungen war das erste Mal im Studium, dass wir ein Programm mit GUI entwickelt haben. Das Projekt MelodyEscape wurde in einer Gruppe von drei Personen umgesetzt.\n\n\
+        Ziel der Veranstaltung war es, die Entwicklung einer interaktiven JavaFX-Anwendung nach dem MVC-Prinzip praxisnah zu erlernen. Neben der technischen Umsetzung standen dabei auch die Planung,\
+        das Design der Benutzeroberfläche sowie die strukturierte Zusammenarbeit im Team im Fokus. So konnten wir den gesamten Entwicklungsprozess – von der ersten Idee bis zur fertigen Anwendung – eigenständig\
+        gestalten.\n\n\
+        Es stand uns frei, welches Programm wir für die Endabgabe entwickeln wollten.\n\
+        Unsere Gruppe entschied sich für ein point-and-Click-Escape-Room-Spiel, das von der Spielereihe \'Cube Escape\' inspiriert wurde.`,
 
         lernwolkeHeader: `Lernwolke`,
         lernwolkeSemesterInfo: `5. Semester – Mensch-Computer-Interaktion`,
-        lernwolkeInfo: ``,
+        lernwolkeInfo: `Die Umsetzung des Mench-Computer-Interaktions (MCI) Projekts sollte als Non-WIMP Prototyp geschehen. Dabei sind wir im laufe der Semesterwochen mehrere Iterationsschritte durchgangen,\
+        um am Ende eine gute Idee, mit einer relevanten Problemlösung zu haben. Zu erst haben wir uns in einer Gruppe von 4 Personen zusammengefunden und erstmal eine sogenannte \'Wie könnten wir...\'-Frage definiert. Also eine Frage, die ein Problem darstellt, welches gelöst werden soll.\n\n\
+        Unserer Fragestellung klang in etwa so:\n\
+        "Wie können wir mit frustrierenden Momenten beim Erwerb neuer Fähigkeiten so umgehen, dass negative Auswirkungen minimiert und die Produktivität maximiert werden?"\n\n\
+        Nach einigen Wochen kamen wir dann zur Idee der Lernwolke als ein Spatial-User-Interface, das die Prinzipen der Pomodoro-Technik (25 Minuten konzentriertes Lernen, gefolgt von 5–10 Minuten Pause) aufgreift.
+        `,
 
-        HKHeader: `Hollow Knight Animation`,
-        HKSemesterInfo: `4. Semester – Motion Design`,
-        HKInfo: ``,
+        hkHeader: `Hollow Knight Animation`,
+        hkSemesterInfo: `4. Semester – Motion Design`,
+        hkInfo: `Im Rahmen des Moduls Motion Design haben wir erstmals mit Adobe After Effects gearbeitet. Das Projekt wurde in einer Gruppe von drei Personen umgesetzt.\
+        Die zentrale Aufgabe bestand darin, ein 1:30 bis 2:00 Minuten langes Video zu konzipieren und zu produzieren.\n\n\
+        Sowohl der visuelle Stil als auch die inhaltliche Ausgestaltung waren vollkommen frei wählbar,\
+        wodurch wir uns Kreativität ausleben lassen konnten.\
+        Diese Freiheit führte auch dazu, dass jede Gruppe ein völlig individuelles Endergebnis erzielte.\n\n\
+        Unsere Gruppe entschied sich für eine Animation rund um das Indie-Spiel Hollow Knight, wobei wir die vielfältigen Werkzeuge und Effekte von After Effects gezielt einsetzten, um die besondere Atmosphäre und Stimmung des Spiels einzufangen.
+        `,
 
-        basicallHeader: `Basicall`,
+        basicallHeader: `basicall`,
+        basicallTooltip: `Infos zum Prototypen:\n\n\
+        1. Am besten im Vollbild anschauen.\n\n\
+        2. Interesse an einer mobile Variante?\n\
+        Unterhalb des Prototypens ist eine Verlinkung`,
         basicallSemesterInfo: `2. Semester – Interaction Design`,
         basicallInfo: `1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view`,
 
@@ -74,6 +94,11 @@ const translations = {
         aekiInfo:``,
         
         calumetHeader: `Calumet Shop Seite`,
+        calumetTooltip: `Infos zum Prototypen:\n\n\
+        1. Am besten im Vollbild anschauen.\n\n\
+        2. Beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert (Figma Limitation)\n\n\
+        3. Interesse an einer mobile Variante?\n\
+        Unterhalb des Prototypens ist eine Verlinkung`,
         calumetSemesterInfo: `2. Semester – Interaction Design`,
         calumetInfo: `1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view`,
         
@@ -99,7 +124,7 @@ const translations = {
         viewAllProjects: `View All Projects`,
         milefizShortDesc: `An interactive multiplayer game inspired by the board game Malefiz.`,
         lernwolkeShortDesc: `The interactive learning and break system.`,
-        HKShortDesc: `Atmospheric animation in the style of the indie game Hollow Knight`,
+        hkShortDesc: `Atmospheric animation in the style of the indie game Hollow Knight`,
 
         mobileVersionLink: `To mobile version →`,
 
@@ -128,17 +153,35 @@ const translations = {
 
         melodyEscapeHeader: `MelodyEscape`,
         melodyEscapeSemesterInfo: `3rd Semester – Interactive Application Development`,
-        melodyEscapeInfo: ``,
+        melodyEscapeInfo: `Interactive Application Development was the first time during our studies that we developed a program with a GUI. The MelodyEscape project was implemented in a group of three people.\n\n\
+        The goal of the course was to learn how to develop an interactive JavaFX application based on the MVC principle in a practical way. In addition to the technical implementation, the focus was also on planning,\
+        user interface design, and structured teamwork. This allowed us to independently design the entire development process—from the initial idea to the finished application.\n\n\
+        We were free to choose which program we wanted to develop for the final submission.
+        Our group decided on a point-and-click escape room game inspired by the \'Cube Escape\' game series.`,
 
         lernwolkeHeader: `Lernwolke`,
         lernwolkeSemesterInfo: `5th Semester – Human-Computer-Interaction`,
-        lernwolkeInfo: ``,
+        lernwolkeInfo: `The implementation of the Human-Computer Interaction (HCI) project was to be done as a non-WIMP prototype. Over the course of the semester,\
+        we went through several iterations to ultimately develop a good idea with a relevant solution. First, we formed a group of four people and started by defining a so-called \'How might we...\'\
+        question – which is, a question that describes a problem to be solved.\n\n\
+        Our question was something like:\n\
+        "How might we deal with frustrating moments when acquiring new skills in a way that minimizes negative effects and maximizes productivity?"\n\n\
+        After a few weeks, we came up with the idea of the Lernwolke as a spatial user interface that incorporates the principles of the Pomodoro technique\
+        (25 minutes of focused learning followed by a 5–10 minute break).`,
 
-        HKHeader: `Hollow Knight Animation`,
-        HKSemesterInfo: `4th Semester – Motion Design`,
-        HKInfo: ``,
+        hkHeader: `Hollow Knight Animation`,
+        hkSemesterInfo: `4th Semester – Motion Design`,
+        hkInfo: `As part of the Motion Design module, we worked with Adobe After Effects for the first time. The project was carried out in a group of three people.\
+        The main task was to conceptualize and produce a video lasting between 1:30 and 2:00 minutes.\n\n\
+        Both the visual style and the content design were completely up to us, allowing us to fully express our creativity. This freedom also meant that each group achieved a completely individual result.\n\n\
+        Our group decided on an animation centered around the indie game Hollow Knight, making targeted use of the diverse tools and effects in After Effects to capture the unique atmosphere and mood of the game.
+        `,
 
-        basicallHeader: `Basicall`,
+        basicallHeader: `basicall`,
+        basicallTooltip: `Info about the prototype:\n\n\
+        1. Best viewed in fullscreen.\n\n\
+        2. Interested in a mobile version?\n\
+        There is a link below the prototype.`,
         basicallSemesterInfo: `2nd Semester – Interaction Design`,
         basicallInfo: `1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view`,
 
@@ -155,6 +198,11 @@ const translations = {
         aekiInfo:``,
         
         calumetHeader: `Calumet Shop Site`,
+        calumetTooltip: `Info about the prototype:\n\n\
+        1. Best viewed in fullscreen.\n\n\
+        2. When hovering over a product, scrolling is disabled—so make sure not to hover over an image while scrolling (Figma limitation)\n\n\
+        3. Interested in a mobile version?\n\
+        There is a link below the prototype.`,
         calumetSemesterInfo: `2nd Semester – Interaction Design`,
         calumetInfo: `1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view`,
 
