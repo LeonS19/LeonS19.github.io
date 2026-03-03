@@ -28,8 +28,8 @@ const translations = {
         milefizInfo: `Bei MI'lefiz handelt es sich, um ein Multiplayer first-person echtzeit Browserspiel.\n\n\
         Die Besonderheit des Softwaretechnik-Projekt Moduls war es, dass man zum Ersten Mal in einer großen Gruppe von bis zu 10 Leuten gearbeitet hat.\
         Der Fokus des Moduls war es Scrum als agile Arbeitsmethode uns Studenten vorzustzellen, um einen Einblick zu bekommen, wie die meisten Unternehmen im echten Leben arbeiten und funktionieren.\n\n\
-        Insgesamt gab es 5 Sprints über das Semester verteilt. In denen mehr oder weniger tägliche Dailies stattfanden. Sprintplannings vor jedem beginn eines neuen Sprints, Retrospektiven und Reviews am ende des Sprints.\
-        Unser Professor in dem Modul Prof. Dr. Weitz fungierte dabei zusätzlich als Stakeholder des Projektes, der essentielle Anforderung definiert hatte.\n\n\
+        Insgesamt gab es 5 Sprints über das Semester verteilt, in denen mehr oder weniger tägliche Dailies stattfanden. Sprintplannings vor jedem Beginn eines neuen Sprints, Retrospektiven und Reviews am ende des Sprints.\
+        Unser Professor in dem Modul, Prof. Dr. Weitz, fungierte dabei zusätzlich als Stakeholder des Projektes, der essentielle Anforderung definiert hatte.\n\n\
         Darunter gehörten:\n\
         1. Jeder Spieler besitzt 5 Spielfiguren\n\
         2. Ein integrierter Map-Editor\n\
@@ -39,7 +39,7 @@ const translations = {
         
         doenerHeader: `Dönerverleih`,
         doenerSemesterInfo: `4. Semester – Webbasierte Anwendung`,
-        doenerInfo: `Beim Dönerverleih handelt es sich, um ein Semesterprojekt in welchem wir erstmals in Berührung mit Spring Boot, Thymeleaf und Vue.js kamen.\n\n\
+        doenerInfo: `Beim Dönerverleih handelt es sich um ein Semesterprojekt in welchem wir erstmals in Berührung mit Spring Boot, Thymeleaf und Vue.js kamen.\n\n\
         Ziel der Veranstaltung war es ein Webbasiertes System zu bauen, mit welchem Benutzer  ihre Döner bearbeiten, ausleihen und wieder an den ursprünglichen Besitzer zurückgeben konnten.\
         Neben normalen Benutzern, gab es auch eine Admin Rolle, welche die Benutzer und Döner verwalten konnte.\n\n\
         Das Backend wurde mit Spring Boot und Thymeleaf, zur HTML generierung, entwickelt und das Frontend via Vue.js\
@@ -47,7 +47,7 @@ const translations = {
 
         melodyEscapeHeader: `MelodyEscape`,
         melodyEscapeSemesterInfo: `3. Semester – Entwicklung Interaktiver Anwendungen`,
-        melodyEscapeInfo: `Entwicklung Interaktiver Anwendungen war das erste Mal im Studium, dass wir ein Programm mit GUI entwickelt haben. Das Projekt MelodyEscape wurde in einer Gruppe von drei Personen umgesetzt.\n\n\
+        melodyEscapeInfo: `In dem Modul Entwicklung Interaktiver Anwendungen war das erste Mal im Studium, dass wir ein Programm mit GUI entwickelt haben. Das Projekt MelodyEscape wurde in einer Gruppe von drei Personen umgesetzt.\n\n\
         Ziel der Veranstaltung war es, die Entwicklung einer interaktiven JavaFX-Anwendung nach dem MVC-Prinzip praxisnah zu erlernen. Neben der technischen Umsetzung standen dabei auch die Planung,\
         das Design der Benutzeroberfläche sowie die strukturierte Zusammenarbeit im Team im Fokus. So konnten wir den gesamten Entwicklungsprozess – von der ersten Idee bis zur fertigen Anwendung – eigenständig\
         gestalten.\n\n\
@@ -56,12 +56,11 @@ const translations = {
 
         lernwolkeHeader: `Lernwolke`,
         lernwolkeSemesterInfo: `5. Semester – Mensch-Computer-Interaktion`,
-        lernwolkeInfo: `Die Umsetzung des Mench-Computer-Interaktions (MCI) Projekts sollte als Non-WIMP Prototyp geschehen. Dabei sind wir im laufe der Semesterwochen mehrere Iterationsschritte durchgangen,\
-        um am Ende eine gute Idee, mit einer relevanten Problemlösung zu haben. Zu erst haben wir uns in einer Gruppe von 4 Personen zusammengefunden und erstmal eine sogenannte \'Wie könnten wir...\'-Frage definiert. Also eine Frage, die ein Problem darstellt, welches gelöst werden soll.\n\n\
-        Unserer Fragestellung klang in etwa so:\n\
+        lernwolkeInfo: `Die Umsetzung des Mench-Computer-Interaktions (MCI) Projekts sollte als Non-WIMP Prototyp geschehen. Das Projekt fand in einer Gruppe von 4 Personen statt. Im laufe der Semesterwochen sind wir mehrere Iterationsschritte durchgangen,\
+        um am Ende eine gute Idee, mit einer relevanten Problemlösung zu haben. Zu erst wurde eine \'Wie könnten wir...\'-Frage definiert. Also eine Frage, die ein Problem darstellt, welches gelöst werden soll.\n\n\
+        Diese Frage war für unser Projekt folgende:\n\
         "Wie können wir mit frustrierenden Momenten beim Erwerb neuer Fähigkeiten so umgehen, dass negative Auswirkungen minimiert und die Produktivität maximiert werden?"\n\n\
-        Nach einigen Wochen kamen wir dann zur Idee der Lernwolke als ein Spatial-User-Interface, das die Prinzipen der Pomodoro-Technik (25 Minuten konzentriertes Lernen, gefolgt von 5–10 Minuten Pause) aufgreift.
-        `,
+        Nach einigen Wochen entstand die Idee der Lernwolke – ein räumliches User-Interface, das die Prinzipien der Pomodoro-Technik (25 Minuten konzentriertes Lernen, gefolgt von 5–10 Minuten Pause) integriert.`,
 
         hkHeader: `Hollow Knight Animation`,
         hkSemesterInfo: `4. Semester – Motion Design`,
@@ -79,7 +78,17 @@ const translations = {
         2. Interesse an einer mobile Variante?\n\
         Unterhalb des Prototypens ist eine Verlinkung`,
         basicallSemesterInfo: `2. Semester – Interaction Design`,
-        basicallInfo: `1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view`,
+        basicallInfo: `Die Aufgabe im Interaction Design Modul war die Entwicklung einer responsiven Website als Klickdummy-Prototyp für ein fiktives IT-StartUp.\
+        Das Projekt wurde in einer Vierergruppe umgesetzt.\
+        In vier Projektphasen haben wir ein Konzept erstellt, ein Corporate Design entwickelt und den Prototypen in Figma realisiert.\n\n\
+        Diese Phasen bestanden aus:\n\
+        1. Discover – Worum geht es?\n\
+        2. Define – Nutzererlebnis planen\n\
+        3. Design – Nutzererlebnis gestalten\n\
+        4. Deliver – Umsetzung & produktion\n\n\
+
+       Am Ende entstand das StartUp 'basicall', das sich auf moderne Dumbphones und spezielle Software zur Begrenzung der Handynutzung im Social-Media-Bereich spezialisiert. Ziel ist es, jungen Menschen zu helfen, ihre Social-Media-Sucht in den Griff zu bekommen.
+       `,
 
         mp3PlayerHeader: `MP3 Player`,
         mp3PlayerSemesterInfo: `3. Semester – Entwicklung Interaktiver Anwendung`,
@@ -153,7 +162,7 @@ const translations = {
 
         melodyEscapeHeader: `MelodyEscape`,
         melodyEscapeSemesterInfo: `3rd Semester – Interactive Application Development`,
-        melodyEscapeInfo: `Interactive Application Development was the first time during our studies that we developed a program with a GUI. The MelodyEscape project was implemented in a group of three people.\n\n\
+        melodyEscapeInfo: `In the Interactive Applications Development module, it was the first time during our studies that we developed a program with a GUI. The MelodyEscape project was implemented in a group of three people.\n\n\
         The goal of the course was to learn how to develop an interactive JavaFX application based on the MVC principle in a practical way. In addition to the technical implementation, the focus was also on planning,\
         user interface design, and structured teamwork. This allowed us to independently design the entire development process—from the initial idea to the finished application.\n\n\
         We were free to choose which program we wanted to develop for the final submission.
@@ -162,12 +171,11 @@ const translations = {
         lernwolkeHeader: `Lernwolke`,
         lernwolkeSemesterInfo: `5th Semester – Human-Computer-Interaction`,
         lernwolkeInfo: `The implementation of the Human-Computer Interaction (HCI) project was to be done as a non-WIMP prototype. Over the course of the semester,\
-        we went through several iterations to ultimately develop a good idea with a relevant solution. First, we formed a group of four people and started by defining a so-called \'How might we...\'\
+        we went through several iterations to ultimately develop a good idea with a relevant solution. The project was realised in a group of four people. First, we started by defining a so-called \'How might we...\'\
         question – which is, a question that describes a problem to be solved.\n\n\
-        Our question was something like:\n\
+        For our project, this question was:\n\
         "How might we deal with frustrating moments when acquiring new skills in a way that minimizes negative effects and maximizes productivity?"\n\n\
-        After a few weeks, we came up with the idea of the Lernwolke as a spatial user interface that incorporates the principles of the Pomodoro technique\
-        (25 minutes of focused learning followed by a 5–10 minute break).`,
+        After a few weeks, the idea for Lernwolke emerged—a spatial user interface that incorporates the principles of the Pomodoro technique (25 minutes of focused learning followed by a 5–10 minute break).`,
 
         hkHeader: `Hollow Knight Animation`,
         hkSemesterInfo: `4th Semester – Motion Design`,
@@ -183,7 +191,17 @@ const translations = {
         2. Interested in a mobile version?\n\
         There is a link below the prototype.`,
         basicallSemesterInfo: `2nd Semester – Interaction Design`,
-        basicallInfo: `1. Im Vollbild anschauen 2. beim hover über produkt kann nicht gescrollt werden also sicher stellen, dass man beim scrollen nicht über ein image hovert 3. kleine Verlinkung auf Smartphone view`,
+        basicallInfo: `The task in the Interaction Design module was to develop a responsive website as a clickable prototype for a fictitious IT start-up.\
+        The project was carried out in a team of four.\
+        Throughout four project phases, we created a concept, developed a corporate design, and realized the prototype in Figma.\n\n\
+        These phases were:\n\
+        1. Discover – What is it about?\n\
+        2. Define – Plan the user experience\n\
+        3. Design – Design the user experience\n\
+        4. Deliver – Implementation & production\n\n\
+
+        In the end, the start-up 'basicall' was created, specializing in modern dumbphones and special software to limit smartphone use in the social media sector. The goal is to help young people get a grip on their social media addiction.
+        `,
 
         mp3PlayerHeader: `MP3 Player`,
         mp3PlayerSemesterInfo: `3rd Semester – Interactive Application Development`,
