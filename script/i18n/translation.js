@@ -47,7 +47,7 @@ const translations = {
 
         melodyEscapeHeader: `MelodyEscape`,
         melodyEscapeSemesterInfo: `3. Semester – Entwicklung Interaktiver Anwendungen`,
-        melodyEscapeInfo: `In dem Modul Entwicklung Interaktiver Anwendungen war das erste Mal im Studium, dass wir ein Programm mit GUI entwickelt haben. Das Projekt MelodyEscape wurde in einer Gruppe von drei Personen umgesetzt.\n\n\
+        melodyEscapeInfo: `In dem Modul Entwicklung Interaktiver Anwendungen (EIA) war das erste Mal im Studium, dass wir ein Programm mit GUI entwickelt haben. Das Projekt MelodyEscape wurde in einer Gruppe von drei Personen umgesetzt.\n\n\
         Ziel der Veranstaltung war es, die Entwicklung einer interaktiven JavaFX-Anwendung nach dem MVC-Prinzip praxisnah zu erlernen. Neben der technischen Umsetzung standen dabei auch die Planung,\
         das Design der Benutzeroberfläche sowie die strukturierte Zusammenarbeit im Team im Fokus. So konnten wir den gesamten Entwicklungsprozess – von der ersten Idee bis zur fertigen Anwendung – eigenständig\
         gestalten.\n\n\
@@ -86,17 +86,22 @@ const translations = {
         2. Define – Nutzererlebnis planen\n\
         3. Design – Nutzererlebnis gestalten\n\
         4. Deliver – Umsetzung & produktion\n\n\
-
-       Am Ende entstand das StartUp 'basicall', das sich auf moderne Dumbphones und spezielle Software zur Begrenzung der Handynutzung im Social-Media-Bereich spezialisiert. Ziel ist es, jungen Menschen zu helfen, ihre Social-Media-Sucht in den Griff zu bekommen.
+        Am Ende entstand das StartUp 'basicall', das sich auf moderne Dumbphones und spezielle Software zur Begrenzung der Handynutzung im Social-Media-Bereich spezialisiert. Ziel ist es, jungen Menschen zu helfen, ihre Social-Media-Sucht in den Griff zu bekommen.
        `,
 
         mp3PlayerHeader: `MP3 Player`,
         mp3PlayerSemesterInfo: `3. Semester – Entwicklung Interaktiver Anwendung`,
-        mp3PlayerInfo: ``,
+        mp3PlayerInfo: `Als einstiegs Projekt im EIA-Modul haben wir einen MP3 Player entwickelt, um die Grundlagen von JavaFX und die Arbeit mit grafischen Oberflächen zu erlernen.\
+        Das Projekt half uns, die wichtigsten Komponenten wie Buttons, Listen und Events zu verstehen und direkt anzuwenden.\n\
+        Durch die praktische Umsetzung konnten wir einen guten Einstieg in die GUI-Programmierung gewinnen. Um danach mit der Entwicklung des Hauptprojekts (MelodyEscape) anfangen zu können.`,
 
         bookletHeader: `Booklet`,
         bookletSemesterInfo: `1. Semester – Grundlagen Mediendesign`,
-        bookletInfo: ``,
+        bookletInfo: `Das Booklet aus dem ersten Semester beinhaltet ein Sammelsurium aller Aufgaben, die wir im Laufe des Semesters in diesem Modul umgesetzt haben.\
+        Dabei lagen die Schwerpunkte auf der Vermittlung gestalterischer Grundkenntnisse, von Farbe, Typografie, bis hin zum fertigen Layout.\n\n\
+        Ziel war es alle Praktikums-Aufgaben ansprechend in einem eigens gestalteten Booklet zu realisieren.\
+        Dabei habe ich mich bei meinem Design an der Videospielreihe 'Dark Souls' inspierieren lassen und versucht den Look-and-Feel davon gut aufzugreifen. 
+        `,
 
         aekiHeader: `Schöner Wohnen – Raumplaner`,
         aekiSemesterInfo: `4. Semester – Softwaretechnik`,
@@ -162,7 +167,7 @@ const translations = {
 
         melodyEscapeHeader: `MelodyEscape`,
         melodyEscapeSemesterInfo: `3rd Semester – Interactive Application Development`,
-        melodyEscapeInfo: `In the Interactive Applications Development module, it was the first time during our studies that we developed a program with a GUI. The MelodyEscape project was implemented in a group of three people.\n\n\
+        melodyEscapeInfo: `In the Interactive Applications Development module (IAD), it was the first time during our studies that we developed a program with a GUI. The MelodyEscape project was implemented in a group of three people.\n\n\
         The goal of the course was to learn how to develop an interactive JavaFX application based on the MVC principle in a practical way. In addition to the technical implementation, the focus was also on planning,\
         user interface design, and structured teamwork. This allowed us to independently design the entire development process—from the initial idea to the finished application.\n\n\
         We were free to choose which program we wanted to develop for the final submission.
@@ -199,13 +204,14 @@ const translations = {
         2. Define – Plan the user experience\n\
         3. Design – Design the user experience\n\
         4. Deliver – Implementation & production\n\n\
-
         In the end, the start-up 'basicall' was created, specializing in modern dumbphones and special software to limit smartphone use in the social media sector. The goal is to help young people get a grip on their social media addiction.
         `,
 
         mp3PlayerHeader: `MP3 Player`,
         mp3PlayerSemesterInfo: `3rd Semester – Interactive Application Development`,
-        mp3PlayerInfo: ``,
+        mp3PlayerInfo: `As an introductory project in the IAD module, we developed an MP3 player to learn the basics of JavaFX and working with graphical user interfaces.\
+        The project helped us understand and directly apply key components such as buttons, lists, and events.\n\
+        Through hands-on implementation, we gained a solid foundation in GUI programming, which prepared us for developing the main project (MelodyEscape) afterwards.`,
 
         bookletHeader: `Booklet`,
         bookletSemesterInfo: `1st Semester – Media Design Fundamentals`,

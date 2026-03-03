@@ -197,7 +197,8 @@ const modalFiles = {
     'melodyEscape-modal': 'modal-melodyEscape.html',
     'lernwolke-modal': 'modal-lernwolke.html',
     'hk-modal': 'modal-hk.html',
-    'basicall-modal': 'modal-basicall.html'
+    'basicall-modal': 'modal-basicall.html',
+    'booklet-modal': 'modal-booklet.html',
 };
 
 const loadedModals = new Set();

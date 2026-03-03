@@ -318,16 +318,20 @@
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="bookletInfo"></p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="booklet-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-pdf">
+                    <button class="fullscreen-btn" onclick="document.getElementById('booklet-pdf').requestFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
                     <object 
+                        id="booklet-pdf"
                         data="assets/files/booklet/booklet.pdf#toolbar=0" 
                         type="application/pdf"
                         width="100%" 
                         height="600px">
                         <p class="roboto-secondary">
                             Der Browser kann das PDF nicht anzeigen. 
-                            <a href="assets/files/booklet/booklet.pdf" class="eyecatch" download>Download PDF</a>
                         </p>
                     </object>
                 </div>
