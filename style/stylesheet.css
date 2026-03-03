@@ -549,7 +549,7 @@ a{
     display: block;
 }
 
-.project-pdf .fullscreen-btn {
+.fullscreen-btn {
     position: absolute;
     right: 15px;
     background: rgba(0, 0, 0, 0.6);
@@ -563,7 +563,15 @@ a{
     transition: all 0.3s ease;
 }
 
-.project-pdf .fullscreen-btn:hover {
+.project-pdf .fullscreen-btn{
+    right: 15px;
+}
+
+.basicall-figma .fullscreen-btn{
+    right: 32px;
+}
+
+.fullscreen-btn:hover {
     background: #5C877F;
     color: #FFE99E;
 }

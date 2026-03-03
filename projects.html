@@ -244,10 +244,13 @@
                     <a href="#" class="open-modal roboto-secondary" data-modal="basicall-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="basicall-figma">
+                    <button class="fullscreen-btn" onclick="document.getElementById('basicall-embeded').requestFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
                     <iframe 
+                        id="basicall-embeded"
                         src="https://embed.figma.com/proto/pA1LFrQWA5dSE16nP8rSdM/Basicall?node-id=928201-336&p=f&scaling=min-zoom&content-scaling=fixed&page-id=928201%3A192&starting-point-node-id=928201%3A336&embed-host=share"
-                        width="100%" 
-                        allowfullscreen>
+                        width="100%" >
                     </iframe>
                 </div>
             </div>
