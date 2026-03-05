@@ -54,7 +54,18 @@ const backToTopPromise = fetch('components/backToTopButton.html')
         document.getElementById('back-to-top-placeholder').innerHTML = data;
     });
 
-Promise.all([headerPromise, footerPromise, backToTopPromise]).then(() => {
+Promise.all([
+    headerPromise,
+    footerPromise,
+    backToTopPromise,
+    new Promise(resolve => {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', resolve);
+        } else {
+            resolve();
+        }
+    })
+]).then(() => {
     setLanguage(getCurrentLanguage());
     requestAnimationFrame(() => {
         updateConnectors();
@@ -144,53 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-const modals = [
-  'modal-milefiz.html',
-  'modal-doener.html',
-  'modal-melodyEscape.html',
-  'modal-lernwolke.html',
-  'modal-hk.html',
-  
-];
-
-modals.forEach(filename => {
-  fetch(`components/modal/${filename}`)
-    .then(res => res.text())
-    .then(data => {
-      document.body.insertAdjacentHTML('beforeend', data);
-      setLanguage(getCurrentLanguage());
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.open-modal[data-modal]').forEach(openBtn => {
-    openBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const modalId = openBtn.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        // Schließen-Button im Modal
-        const closeBtn = modal.querySelector('.close-modal');
-        if (closeBtn) {
-          closeBtn.onclick = function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-          };
-        }
-        // Klick auf Overlay schließt Modal
-        modal.onclick = function(event) {
-          if (event.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-          }
-        };
-      }
-    });
-  });
-});
-
 const modalFiles = {
     'milefiz-modal': 'modal-milefiz.html',
     'doener-modal': 'modal-doener.html',
@@ -199,6 +163,8 @@ const modalFiles = {
     'hk-modal': 'modal-hk.html',
     'basicall-modal': 'modal-basicall.html',
     'booklet-modal': 'modal-booklet.html',
+    'aeki-modal': 'modal-aeki.html',
+    'calumet-modal': 'modal-calumet.html',
 };
 
 const loadedModals = new Set();
@@ -261,37 +227,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 let ytApiReady = false;
-let domReady = false;
-
-function tryInitYouTubePlayers() {
-    if (ytApiReady && domReady) {
-        const videoConfigs = [
-            { id: 'lernwolke-player', videoId: 'PyrLu2bvX1I' },
-            { id: 'melody-player', videoId: '4SwvMUJdi4g' },
-            { id: 'hollowknight-player', videoId: 'x7nPo_s8MS4' },
-            { id: 'mp3Player-player', videoId: 'HJYH0AhHVS0' },
-        ];
-        videoConfigs.forEach(cfg => {
-            const el = document.getElementById(cfg.id);
-            if (el && !el.hasAttribute('data-yt-initialized')) {
-                new YT.Player(cfg.id, {
-                    videoId: cfg.videoId,
-                    playerVars: {
-                        controls: 1,
-                        modestbranding: 1,
-                        rel: 0,
-                    },
-                    events: {
-                        'onReady': function(event) {
-                            event.target.setVolume(10);
-                        }
-                    }
-                });
-                el.setAttribute('data-yt-initialized', 'true');
-            }
-        });
-    }
-}
 
 // YouTube API laden
 if (!window.YT) {
@@ -302,16 +237,69 @@ if (!window.YT) {
 
 window.onYouTubeIframeAPIReady = function() {
     ytApiReady = true;
-    tryInitYouTubePlayers();
+};
 
-    // Slider-Videos
+// Click-to-Load für normale Videos
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.youtube-lite').forEach(lite => {
+        lite.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            const container = this;
+            
+            function initPlayer() {
+                if (!ytApiReady) {
+                    setTimeout(initPlayer, 100);
+                    return;
+                }
+                
+                const playerId = `yt-player-${videoId}`;
+                container.innerHTML = `<div id="${playerId}"></div>`;
+                
+                // Initialisiere YouTube Player mit Lautstärke-Einstellung
+                new YT.Player(playerId, {
+                    videoId: videoId,
+                    width: '100%',
+                    height: '100%',
+                    playerVars: {
+                        autoplay: 1,
+                        controls: 1,
+                        modestbranding: 1,
+                        rel: 0,
+                    },
+                    events: {
+                        'onReady': function(event) {
+                            event.target.setVolume(10);
+                        }
+                    }
+                });
+                
+                container.style.cursor = 'default';
+            }
+            
+            initPlayer();
+        });
+    });
+});
+
+// Slider-Videos (mit Lautstärke)
+window.pendingYouTubePlayers = [];
+
+window.onYouTubeIframeAPIReady = function() {
+    ytApiReady = true;
+    
+    // Slider-Videos initialisieren
     if (window.pendingYouTubePlayers && window.pendingYouTubePlayers.length > 0) {
         window.pendingYouTubePlayers.forEach(cfg => {
-            window[cfg.playerId] = new YT.Player(cfg.playerId, {
+            new YT.Player(cfg.playerId, {
                 videoId: cfg.videoId,
+                playerVars: {
+                    controls: 1,
+                    modestbranding: 1,
+                    rel: 0,
+                },
                 events: {
                     'onReady': function(event) {
-                        event.target.setVolume(10);
+                        event.target.setVolume(10); // 10% Lautstärke
                     }
                 }
             });
@@ -319,8 +307,3 @@ window.onYouTubeIframeAPIReady = function() {
         window.pendingYouTubePlayers = [];
     }
 };
-
-document.addEventListener('DOMContentLoaded', function() {
-    domReady = true;
-    tryInitYouTubePlayers();
-});

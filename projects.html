@@ -78,7 +78,7 @@
                     <a href="#" class="open-modal roboto-secondary" data-modal="milefiz-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-slider">
-                    <div id="slider-1"></div>
+                    <div id="slider-milefiz"></div>
                 </div>
             </div>
             <div class="circle-left-bottom"></div>
@@ -110,7 +110,7 @@
                     <a href="#" class="open-modal roboto-secondary" data-modal="doener-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-slider">
-                    <div id="slider-2"></div>
+                    <div id="slider-doener"></div>
                 </div>
             </div>
             
@@ -141,8 +141,11 @@
                     <a href="#" class="open-modal roboto-secondary" data-modal="melodyEscape-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
 
-                <div class="project-video" >
-                    <div id="melody-player"></div>
+                <div class="project-video">
+                    <div class="youtube-lite" data-video-id="4SwvMUJdi4g">
+                        <img src="https://img.youtube.com/vi/4SwvMUJdi4g/maxresdefault.jpg" alt="MelodyEscape Video">
+                        <div class="play-button"></div>
+                    </div>
                 </div>
             </div>
             
@@ -175,7 +178,10 @@
                     <a href="#" class="open-modal roboto-secondary" data-modal="lernwolke-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="project-video">
-                    <div id="lernwolke-player"></div>
+                    <div class="youtube-lite" data-video-id="PyrLu2bvX1I">
+                        <img src="https://img.youtube.com/vi/PyrLu2bvX1I/maxresdefault.jpg" alt="Lernwolke Video">
+                        <div class="play-button"></div>
+                    </div>
                 </div>
             </div>            
             
@@ -207,8 +213,11 @@
                     <p class="roboto-secondary" data-i18n="hkInfo">*projectbeschreibung / Vid oder Bilder*</p>
                     <a href="#" class="open-modal roboto-secondary" data-modal="hk-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
-                <div class="project-video" >
-                    <div id="hollowknight-player"></div>
+                <div class="project-video">
+                    <div class="youtube-lite" data-video-id="x7nPo_s8MS4">
+                        <img src="https://img.youtube.com/vi/x7nPo_s8MS4/maxresdefault.jpg" alt="Hollow Knight Video">
+                        <div class="play-button"></div>
+                    </div>
                 </div>
             </div>         
             
@@ -292,7 +301,10 @@
                     <p class="roboto-secondary" data-i18n="mp3PlayerInfo">*projectbeschreibung / Vid oder Bilder*</p>
                 </div>
                 <div class="project-video">
-                    <div id="mp3Player-player"></div>
+                    <div class="youtube-lite" data-video-id="HJYH0AhHVS0">
+                        <img src="https://img.youtube.com/vi/HJYH0AhHVS0/maxresdefault.jpg" alt="MP3 Player Video">
+                        <div class="play-button"></div>
+                    </div>
                 </div>
             </div>
             <div class="circle-left-bottom"></div>
@@ -360,8 +372,15 @@
                     <span class="tech-badge">JavaFX</span>
                 </div>
             </div>
-
-            <p class="roboto-secondary" data-i18n="aekiInfo"></p>
+            <div class="project-container">
+                <div class="project-text">
+                    <p class="roboto-secondary" data-i18n="aekiInfo"></p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="aeki-modal" data-i18n="learnMore">Mehr erfahren →</a>
+                </div>
+                <div class="project-slider">
+                    <div id="slider-aeki"></div>
+                </div>
+            </div>
             <div class="circle-left-bottom"></div>
         </div>
 
@@ -393,13 +412,17 @@
             <div class="project-container">
                 <div class="project-text">
                     <p class="roboto-secondary" data-i18n="calumetInfo"></p>
+                    <a href="#" class="open-modal roboto-secondary" data-modal="calumet-modal" data-i18n="learnMore">Mehr erfahren →</a>
                 </div>
                 <div class="calumet-figma">
+                    <button class="fullscreen-btn" onclick="document.getElementById('calumet-embeded').requestFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
                     <iframe 
+                        id="calumet-embeded"
                         src="https://embed.figma.com/proto/P2CGyPrUUCZ3PLKVnNzMLZ/Gem-%C3%9Cbung2?node-id=307-3&p=f&scaling=min-zoom&content-scaling=fixed&page-id=302%3A6&starting-point-node-id=307%3A3&embed-host=share"
                         width="100%" 
-                        height="700"
-                        allowfullscreen>
+                        height="700">
                     </iframe>
                 </div>
             </div>
@@ -426,7 +449,7 @@
         <div id="back-to-top-placeholder"></div> 
 
         <script>
-            createSlider('slider-1', [
+            createSlider('slider-milefiz', [
                 { type: 'video', src: 'https://www.youtube.com/embed/1zmxUiW0kig' },
                 'assets/images/milefiz/SlotMachine_Game.png',
                 'assets/images/milefiz/milefiz_screen_1.png',
@@ -437,7 +460,13 @@
                 'assets/images/milefiz/milefiz_screen_6.png',
                 'assets/images/milefiz/milefiz_screen_7.png',
             ]);
-            createSlider('slider-2', [
+            createSlider('slider-doener', [
+                'assets/images/doenerverleih/Doenerverleih_1.png',
+                'assets/images/doenerverleih/Doenerverleih_2.png',
+                'assets/images/doenerverleih/Doenerverleih_3.png',
+                'assets/images/doenerverleih/Doenerverleih_4.png',
+            ]);
+            createSlider('slider-aeki', [
                 'assets/images/doenerverleih/Doenerverleih_1.png',
                 'assets/images/doenerverleih/Doenerverleih_2.png',
                 'assets/images/doenerverleih/Doenerverleih_3.png',

@@ -26,26 +26,32 @@ items.forEach((item, idx) => {
         img.src = item;
         img.classList.add('slider-img');
         track.appendChild(img);
-    }else if (item.type === 'video'){
-        const ytDiv = document.createElement('div');
-        ytDiv.classList.add('slider-img');
-        ytDiv.style.minWidth = '100%';
-        ytDiv.style.width = '100%';
-        ytDiv.style.height = '50vh';
-        // Eindeutige ID für den Player
-        const playerId = `${containerId}-youtube-${idx}`;
-        ytDiv.id = playerId;
-        track.appendChild(ytDiv);
-
-        // Player-Konfiguration merken
-        if (!window.pendingYouTubePlayers) window.pendingYouTubePlayers = [];
-        // Extrahiere Video-ID aus src
+    } else if (item.type === 'video'){
+        // YouTube Thumbnail statt direktem Player
         const match = item.src.match(/embed\/([a-zA-Z0-9_-]+)/);
         if (match) {
-            window.pendingYouTubePlayers.push({
-                playerId,
-                videoId: match[1]
-            });
+            const videoId = match[1];
+            const thumbnailDiv = document.createElement('div');
+            thumbnailDiv.classList.add('slider-img', 'youtube-lite');
+            thumbnailDiv.setAttribute('data-video-id', videoId);
+            thumbnailDiv.style.minWidth = '100%';
+            thumbnailDiv.style.width = '100%';
+            thumbnailDiv.style.height = '50vh';
+            thumbnailDiv.style.position = 'relative';
+            thumbnailDiv.style.cursor = 'pointer';
+            
+            const thumbnail = document.createElement('img');
+            thumbnail.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            thumbnail.style.width = '100%';
+            thumbnail.style.height = '100%';
+            thumbnail.style.objectFit = 'cover';
+            
+            const playBtn = document.createElement('div');
+            playBtn.classList.add('play-button');
+            
+            thumbnailDiv.appendChild(thumbnail);
+            thumbnailDiv.appendChild(playBtn);
+            track.appendChild(thumbnailDiv);
         }
     }
 });
@@ -92,5 +98,42 @@ items.forEach((item, idx) => {
     nextBtn.addEventListener('click', () => {
         current = current < items.length - 1 ? current + 1 : 0;
         updateSlider();
+    });
+    container.querySelectorAll('.youtube-lite').forEach(lite => {
+        lite.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            const container = this;
+            
+            function initPlayer() {
+                if (!window.ytApiReady) {
+                    setTimeout(initPlayer, 100);
+                    return;
+                }
+                
+                const playerId = `yt-slider-${videoId}-${Date.now()}`;
+                container.innerHTML = `<div id="${playerId}"></div>`;
+                
+                new YT.Player(playerId, {
+                    videoId: videoId,
+                    width: '100%',
+                    height: '100%',
+                    playerVars: {
+                        autoplay: 1,
+                        controls: 1,
+                        modestbranding: 1,
+                        rel: 0,
+                    },
+                    events: {
+                        'onReady': function(event) {
+                            event.target.setVolume(10);
+                        }
+                    }
+                });
+                
+                container.style.cursor = 'default';
+            }
+            
+            initPlayer();
+        });
     });
 }
