@@ -533,6 +533,14 @@ a{
   background: #FFE99E;
 }
 
+/* Aeki Slider specific styles */
+#slider-aeki img {
+    background-color: white;
+    padding: 20px;
+    object-fit: contain;
+    max-height: 400px;
+}
+
 .project-pdf {
     width: 100%;
     max-width: 1000px;
